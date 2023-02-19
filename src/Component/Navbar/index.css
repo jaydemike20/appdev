@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+.banner {
+    width: 100vw;
+    height: 7vh;
+    background-color: #35475F;
+
+
+
+}
+
+/* for title and Logo */
+
+.title {
+    width: 50%;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    margin: 1.5vh;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* for navigation bar */
+
+.navbar {
+    width: 50%;
+    float: right;
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li {
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.navbar ul li a{
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+
+
+    padding: 10px;
+    letter-spacing: 1px;
+    animation: 0.3s;
+}
+
+.navbar ul li a:hover{
+    color: black;
+}
+
+
