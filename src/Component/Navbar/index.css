@@ -19,7 +19,7 @@
 /* for title and Logo */
 
 .title {
-    width: 50%;
+    width: 40vw;
     float: left;
 
     display: flex;
