@@ -1,6 +1,7 @@
 import Navbar from '../../Component/Navbar/index'
 import './index.css';
 import 'boxicons';
+import SearchBar from '../../Component/Searchbar';
 
 
 function Dashboard() {
@@ -23,7 +24,7 @@ function Dashboard() {
 
                 <h2>Total Sales</h2>
 
-                <h3>₱ 1,500.00</h3>
+                <h3>₱ 0.00</h3>
 
             </div>
 
@@ -48,7 +49,7 @@ function Dashboard() {
 
                 <div className="tabletext">
                     <h2>Total</h2>
-                    <h2>₱ 1,500.00</h2>
+                    <h2>₱ 0.00</h2>
                 </div>
 
 
@@ -68,7 +69,7 @@ function Dashboard() {
 
             </div>
 
-
+            <SearchBar />
 
                    
         </div>
