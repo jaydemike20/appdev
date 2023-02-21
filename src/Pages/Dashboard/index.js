@@ -2,6 +2,8 @@ import Navbar from '../../Component/Navbar/index'
 import './index.css';
 import 'boxicons';
 import SearchBar from '../../Component/Searchbar';
+import Products from '../../Component/Products/products';
+
 
 
 function Dashboard() {
@@ -70,7 +72,7 @@ function Dashboard() {
             </div>
 
             <SearchBar />
-
+            <Products />
                    
         </div>
     );

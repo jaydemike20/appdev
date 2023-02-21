@@ -30,10 +30,24 @@ function AddItem() {
                     <p>Name</p>
                     <input placeholder='type here'></input>
                 </div>
+<<<<<<< HEAD
+=======
+                <div className= 'code'>
+                    <p>Code</p>
+                    <input placeholder='type here'></input>
+                </div>
+>>>>>>> 2b06828b5c9f0c17dcb6ce3ef083bd9602da8928
                 <div className= 'price'>
                     <p>Price</p>
                     <input type="number" placeholder='type here'></input>
                 </div>
+<<<<<<< HEAD
+=======
+                <div className= 'category'>
+                    <p>Category</p>
+                    <input placeholder='type here'></input>
+                </div>
+>>>>>>> 2b06828b5c9f0c17dcb6ce3ef083bd9602da8928
                 <div class="file-upload">
                     <p>Upload</p>
                     
