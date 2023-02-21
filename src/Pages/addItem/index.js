@@ -7,8 +7,10 @@ function AddItem() {
     return(
         <div>
             <Navbar />
-            <div>AddItem Ni</div> 
-      
+            <div>AddItem Ni - Added additem branch </div> 
+
+            
+
         </div>
     );
 }
