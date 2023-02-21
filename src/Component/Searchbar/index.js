@@ -25,6 +25,7 @@ function SearchBar () {
                         <option disabled>Categories</option>
                         <option value="Liquor" >Liquor</option>
                         <option value="Goods">Can Goods</option>
+                        <option value="All">All</option>
                     </select>
 
                 </div>
