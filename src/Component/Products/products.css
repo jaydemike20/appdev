@@ -41,6 +41,7 @@
 }
 
 .card {
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     padding-top: 10px;
     text-align: center;
@@ -73,9 +74,10 @@
 
 .containercard p {
     font-size: 16px;
-    font-weight: 600;
-    background-color: #f1f1f1;
-    padding: 10px 0px;
+    background-color: #3FAEB5;
+    padding: 5px 0px;
+    color: white;
+    letter-spacing: 2px;
 }
 
 .containercard button {
@@ -87,7 +89,7 @@
 }
 
 .minus {
-    background-color: rgba(255, 0, 0, 0.863);
+    background-color: #C13838;
     border-bottom-left-radius: 25px;
 }
 
@@ -96,7 +98,7 @@
 }
 
 .plus {
-    background-color: rgba(0, 128, 0, 0.863);
+    background-color: #6CC138;
     border-bottom-right-radius: 25px;
 }
 
@@ -104,3 +106,5 @@
     background-color: rgb(0, 128, 0);
 
 } 
+
+

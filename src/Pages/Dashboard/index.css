@@ -58,7 +58,42 @@
     background-color: #ffffff;
     border-bottom: 2px solid black;
     overflow-y: scroll;
+    padding-right: 5px;
 }
+
+.tablename {
+    width: 10vw;
+}
+
+.tablecode {
+    width: 6vw;
+}
+.tableqty {
+    width: 6vw;
+}
+.tableprice {
+    width: 6vw;
+}
+
+table tr { 
+    margin: 10px 0px;
+
+}
+
+table tr th{
+    padding: 5px 0px;
+    
+}
+
+table tr td {
+    font-size: 13px;
+    padding: 5px 0px;
+    text-align: center;
+    background-color: #f1f1f1;
+
+    
+}
+
 
 
 
