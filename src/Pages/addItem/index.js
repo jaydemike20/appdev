@@ -38,7 +38,7 @@ function AddItem() {
                     <p>Upload</p>
                     
                     <label>
-                        
+                         
                         <div><img src={uploadicon} alt="My Image" />
                         <span>{selectedFile ? selectedFile.name : 'Select a file'}</span></div>
                         <input type="file" onChange={handleFileInputChange} accept="image/*"/>
