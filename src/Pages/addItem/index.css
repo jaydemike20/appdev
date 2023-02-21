@@ -170,6 +170,10 @@
     color: black;
     
 }
+.additem button:hover {
+    
+    background-color: #2980b9; 
+}
 .additem button img {
     width: 2vw;
     height: 4vh;
