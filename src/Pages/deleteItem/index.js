@@ -6,7 +6,7 @@ function DeleteItem() {
     return(
         <div>
             <Navbar />
-            <div>Delete Item Ni</div>        
+            <div>Delete Item Ni - new branch deleleitem</div>        
         </div>
     );
 }
