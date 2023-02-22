@@ -41,11 +41,20 @@ const router = createBrowserRouter([
 function IntroductionScreen() {
   const [redirect, setRedirect] = useState(false);
 
+
+
+
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const visitedIntro = sessionStorage.getItem('visitedIntro');
+    if (visitedIntro) {
       setRedirect(true);
-    }, 3000);
-    return () => clearTimeout(timer);
+    } else {
+      const timer = setTimeout(() => {
+        setRedirect(true);
+        sessionStorage.setItem('visitedIntro', true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (redirect) {
@@ -57,8 +66,6 @@ function IntroductionScreen() {
       <img src={sarisari} style={{ maxWidth: '100%', height: 'auto' }} />
       <h1 style={{color: 'white', letterSpacing: '5px'}}>Sari-Sari Store</h1>
     </div>
-
-
   )
 
 
