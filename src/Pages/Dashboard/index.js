@@ -4,20 +4,25 @@ import 'boxicons';
 import SearchBar from '../../Component/Searchbar';
 import Products from '../../Component/Products/products';
 import ProductData from '../../Data/data';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { resetValues } from '../../Component/Products/productSlice';
 
 
 function Dashboard() {
 
+    const dispatch = useDispatch();
 
     const handleDiscard = () => {
 
-        console.log('delete');
+        dispatch(resetValues());
     }
 
     const handlePayment = () => {
         console.log('Payment');
     }
+
+    const payment = useSelector((state) => state.product.payment);
+    const totals = useSelector((state) => state.product.total )
 
     return(
         <div>
@@ -43,19 +48,17 @@ function Dashboard() {
                             <th className="tableprice">Price</th>
                         </tr>
 
-                        <tr>
-                            <td>Emperador</td>
-                            <td>Empe</td>
-                            <td>3</td>
-                            <td>182.00</td>
+                    {payment.map((value, index) => (
+
+                        <tr key={value.code}>
+                            <td>{value.name}</td>
+                            <td>{value.code}</td>
+                            <td>{value.qty}</td>
+                            <td>{value.price}</td>
                         </tr>
 
-                        <tr>
-                            <td>Emperador Light</td>
-                            <td>Empe Light</td>
-                            <td>3</td>
-                            <td>182.00</td>
-                        </tr>
+                        ))}
+
 
                     </table>
 
@@ -64,7 +67,7 @@ function Dashboard() {
 
                 <div className="tabletext">
                     <h2>Total</h2>
-                    <h2>₱ 0.00</h2>
+                    <h2>₱ {totals} </h2>
                 </div>
 
 
