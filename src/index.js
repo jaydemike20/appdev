@@ -4,6 +4,8 @@ import Dashboard from './Pages/Dashboard';
 import AddItem from './Pages/addItem';
 import EditItem from './Pages/editItem';
 import DeleteItem from './Pages/deleteItem';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 // import react router
 import {
@@ -38,5 +40,9 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router}  />
+    </Provider>
+
+
 );
