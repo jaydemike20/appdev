@@ -2,6 +2,9 @@ import Navbar from '../../Component/Navbar/index'
 import './index.css';
 import 'boxicons';
 import SearchBar from '../../Component/Searchbar';
+import Products from '../../Component/Products/products';
+import ProductData from '../../Data/data';
+
 
 
 function Dashboard() {
@@ -40,7 +43,19 @@ function Dashboard() {
                             <th className="tableprice">Price</th>
                         </tr>
 
+                        <tr>
+                            <td>Emperador</td>
+                            <td>Empe</td>
+                            <td>3</td>
+                            <td>182.00</td>
+                        </tr>
 
+                        <tr>
+                            <td>Emperador Light</td>
+                            <td>Empe Light</td>
+                            <td>3</td>
+                            <td>182.00</td>
+                        </tr>
 
                     </table>
 
@@ -70,7 +85,7 @@ function Dashboard() {
             </div>
 
             <SearchBar />
-
+            <Products details={ProductData} />
                    
         </div>
     );
