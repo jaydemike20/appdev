@@ -8,8 +8,10 @@ import warningicon from "../../Component/icon/warning-icon.png"
 
 function DeleteItem() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const handleDelete = (value, index) => {
+    const [productName, setProductName] = useState('');    
+    const handleDelete = (name) => {
         setModalIsOpen(true);
+        setProductName(name);
     };
     
     return(
@@ -35,10 +37,10 @@ function DeleteItem() {
                                     <div className='containercardd'>
                                         <h4>{value.name}</h4>
                                         <p> ₱{value.price}.00</p>
-                                        <button className='delete' onClick={handleDelete}>Delete</button>
-                                        <Modal className = 'modal' isOpen={modalIsOpen} overlayClassName="modal-overlay" >
+                                        <button className='delete' onClick={() => handleDelete(value.name)}>Delete</button>
+                                        <Modal className = 'modal' isOpen={modalIsOpen} overlayClassName="modal-overlay">
                                             <img src={warningicon} className="warning"/>  
-                                            <h2>Are you sure to delete<br></br> {value.name}? </h2>
+                                            <h2>Are you sure to delete<br></br> {productName}? </h2>
                                             <div className = 'buttons'>
                                                 <button className = 'cancel' onClick={() => setModalIsOpen(false)}>CANCEL</button>
                                                 <button className = 'yes' onClick={() => setModalIsOpen(false)}>YES</button>
