@@ -25,7 +25,69 @@ const ProductData = [
         price: 12,
         img: canton,
     },
-    
+    {
+        code: 'empi1',
+        name: 'Emperador Light',
+        qty: 1,
+        price: 150,
+        img: logo,
+    },
+    {
+        code: 'soap1',
+        name: 'Safeguard White',
+        qty: 1,
+        price: 54,
+        img: soap,
+    },
+    {
+        code: 'empi3',
+        name: 'Pancit Canton Spicy',
+        qty: 1,
+        price: 12,
+        img: canton,
+    },
+    {
+        code: 'empi1',
+        name: 'Emperador Light',
+        qty: 1,
+        price: 150,
+        img: logo,
+    },
+    {
+        code: 'soap1',
+        name: 'Safeguard White',
+        qty: 1,
+        price: 54,
+        img: soap,
+    },
+    {
+        code: 'empi3',
+        name: 'Pancit Canton Spicy',
+        qty: 1,
+        price: 12,
+        img: canton,
+    },
+    {
+        code: 'empi1',
+        name: 'Emperador Light',
+        qty: 1,
+        price: 150,
+        img: logo,
+    },
+    {
+        code: 'soap1',
+        name: 'Safeguard White',
+        qty: 1,
+        price: 54,
+        img: soap,
+    },
+    {
+        code: 'empi3',
+        name: 'Pancit Canton Spicy',
+        qty: 1,
+        price: 12,
+        img: canton,
+    },
 
 
 ]
