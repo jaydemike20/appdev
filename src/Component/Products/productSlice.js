@@ -4,7 +4,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const productSlice = createSlice({
     name: "product",
     initialState: {
-        totalsales: '',
+        customerCash: 0,
+        customerChange: 0,
+        totalsales: 0,
         total: 0,
         quantity: 0,
         payment: [],
@@ -58,20 +60,29 @@ const productSlice = createSlice({
                     }
 
 
-
-
         },
         resetValues: (state) => {
             state.payment = []
             state.total = 0;
             state.quantity = 0;
+
+            state.customerCash = 0;
+            state.customerChange = 0;
         },
+        setCustomerCash: (state, action) => {
+            state.customerCash = action.payload;
+            state.customerChange = state.customerCash - state.total
+        },
+        setTotalSales: (state, action) => {
+            state.totalsales += action.payload
+        }
+
 
     },
 });
 
 
-export const { increment, decrement, resetValues } = productSlice.actions;
+export const { increment, decrement, resetValues, setCustomerCash, setTotalSales} = productSlice.actions;
 
 export default productSlice.reducer;
 

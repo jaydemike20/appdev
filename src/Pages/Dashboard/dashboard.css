@@ -1,0 +1,312 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.totalsales {
+    width: 40vw;
+    height: 10vh;
+    position: fixed;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.totalsales h2 {
+    font-size: 30px;
+    margin-left: 130px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.totalsales h3 {
+    color: #FFFFFF;
+    font-size: 25px;
+
+    padding: 10px 50px;
+    margin-left: 30px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+
+    background-color: #52B050;
+}
+
+.table {
+    position: fixed;
+    top: 17vh;
+    left: 167px;
+    width: 30vw;
+    height: 80vh;
+    background-color: #ffffff;
+    
+    border: 2px solid black;
+    border-radius: 10px;
+
+    padding: 10px 20px
+
+}
+
+
+.containertable {
+    height: 62vh;
+
+    background-color: #ffffff;
+    border-bottom: 2px solid black;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+.tablename {
+    width: 10vw;
+}
+
+.tablecode {
+    width: 6vw;
+}
+.tableqty {
+    width: 6vw;
+}
+.tableprice {
+    width: 6vw;
+}
+
+table tr { 
+    margin: 10px 0px;
+
+}
+
+table tr th{
+    padding: 5px 0px;
+    
+}
+
+table tr td {
+    font-size: 13px;
+    padding: 5px 0px;
+    text-align: center;
+    background-color: #f1f1f1;
+
+    
+}
+
+
+
+.tabletext {
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+.tablebuttons ul{
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tablebuttons ul li {
+    list-style: none;
+    display: flex;
+
+}
+
+.tablebuttons ul li button{
+    border: 0px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+.tablebuttons ul li button{
+    border: 0px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.tablebuttons ul li button:hover{
+    color: white;
+}
+
+.modall{
+    color: white;
+    background-color: #779D27;
+
+    width: 40vw;
+    height: 50vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+}
+
+.hrr {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.hrr hr {
+    width: 80%;
+    height: 5px;
+    background-color: #474545;
+    border: 0px;
+}
+
+
+
+.totalcash {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+
+.totalcash h3{
+    width: 40%;
+    float: left;
+}
+
+.totalcash h3 {
+    color: #FFFFFF;
+    width: 40%;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin: 10px 0px;
+    text-align: right;
+
+
+}
+
+.totalcash p{
+
+    width: 50%;
+    font-size: 29px;
+    letter-spacing: 1px;
+    margin: 10px 100px;
+    padding: 10px 100px;
+    background-color: #B5BDBD;
+    border-radius: 50px;
+}
+
+.cash {
+    width: 100%;
+    display: flex;
+    text-align: center;
+
+    margin-top: 40px;
+
+
+}
+
+.cash h3 {
+    color: #FFFFFF;
+    width: 40%;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin: 10px 0px;
+    text-align: right;
+}
+
+.cash input {
+    width: 60%;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 10px 100px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #B5BDBD;
+    border: 0px;
+    color: #F1F1F1;
+    font-size: 29px;
+
+}
+
+/* hide the up and down buttons */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.change {
+    width: 100%;
+    display: flex;
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.change h3{
+    color: #FFFFFF;
+    width: 40%;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin: 10px 0px;
+    text-align: right;
+}
+
+.change p {
+    width: 50%;
+    font-size: 29px;
+    letter-spacing: 1px;
+    margin: 10px 100px;
+    padding: 10px 100px;
+    background-color: #B5BDBD;
+    border-radius: 50px;
+}
+
+.confirm {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 20px;
+}
+
+.confirm button {
+    color: #FFFFFF;
+    padding: 10px 100px;
+    border: 0px;
+    font-size: 30px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #63A8C6;
+    cursor: pointer;
+}
+
+.confirm button:hover {
+    background-color: #2980b9;
+}

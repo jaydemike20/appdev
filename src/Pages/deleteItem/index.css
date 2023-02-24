@@ -22,6 +22,7 @@
     height: 80vh;
     padding: 0px 20px;
     overflow-y: scroll;
+
 }
 .centeredd {
     position: relative; 
@@ -29,8 +30,7 @@
 .columnn {
     float: left;
     width: 15%;
-    padding: 0 10px;
-    margin: 20px 0px;   
+    margin: 10px 15px;
 }
 
 .roww {
@@ -41,10 +41,11 @@
     content: "";
     display: table;
     clear: both;
+
+    
 }
 
 .cardd {
-
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "cardd" effect */
     padding-top: 10px;
     text-align: center;
@@ -63,11 +64,12 @@
   }
 
 .cardd:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 10px 8px 16px 0 rgb(167, 52, 52);
   }
   
 .containercardd {
     padding-top: 10px;
+    
 }
 
 .containercardd p {
