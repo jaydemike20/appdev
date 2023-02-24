@@ -22,6 +22,7 @@ function Dashboard() {
     const totals = useSelector((state) => state.product.total);
     const totalSale = useSelector((state) => state.product.totalsales);
     const change = useSelector((state) => state.product.customerChange);
+    const cash = useSelector((state) => state.product.customerCash);
 
 
 
@@ -103,7 +104,6 @@ function Dashboard() {
 
             </div>
 
-            <SearchBar />
             <Products details={ProductData} />
 
             <Modal className='modall' isOpen={modal}  onRequestClose={handleModalClose}>
@@ -134,7 +134,11 @@ function Dashboard() {
 
                 <div className='confirm'>
                     <button onClick={() => {
-                        dispatch(setTotalSales(totals));
+
+                        if (cash >= totals) {
+                            dispatch(setTotalSales(totals));
+                        }
+
                         dispatch(resetValues());
                         setModal(false);
                     }}>Confirm</button>
