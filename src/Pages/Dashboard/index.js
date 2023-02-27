@@ -1,20 +1,44 @@
 import Navbar from '../../Component/Navbar/index'
-import './index.css';
+import '../Dashboard/dashboard.css';
 import 'boxicons';
 import SearchBar from '../../Component/Searchbar';
-
+import Products from '../../Component/Products/products';
+import ProductData from '../../Data/data';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetValues, setCustomerCash, setCustomerChange, setTotalSales } from '../../Component/Products/productSlice';
+import { useState } from 'react';
+import Modal from 'react-modal';
 
 function Dashboard() {
 
+    const dispatch = useDispatch();
 
     const handleDiscard = () => {
-
-        console.log('delete');
+        dispatch(resetValues());
     }
 
-    const handlePayment = () => {
-        console.log('Payment');
+
+    const payment = useSelector((state) => state.product.payment);
+    const totals = useSelector((state) => state.product.total);
+    const totalSale = useSelector((state) => state.product.totalsales);
+    const change = useSelector((state) => state.product.customerChange);
+    const cash = useSelector((state) => state.product.customerCash);
+
+
+
+    // modal for payment
+    const [modal, setModal] = useState(false);
+
+    const handleModalOpen = () => {
+        setModal(true);
     }
+
+    const handleModalClose = () => {
+        setModal(false);
+        dispatch(resetValues());
+    }
+
+
 
     return(
         <div>
@@ -24,7 +48,7 @@ function Dashboard() {
 
                 <h2>Total Sales</h2>
 
-                <h3>₱ 0.00</h3>
+                <h3>₱ {totalSale}.00</h3>
 
             </div>
 
@@ -40,6 +64,16 @@ function Dashboard() {
                             <th className="tableprice">Price</th>
                         </tr>
 
+                    {payment.map((value, index) => (
+
+                        <tr key={value.code}>
+                            <td>{value.name}</td>
+                            <td>{value.code}</td>
+                            <td>{value.qty}</td>
+                            <td>{value.price}</td>
+                        </tr>
+
+                        ))}
 
 
                     </table>
@@ -49,7 +83,7 @@ function Dashboard() {
 
                 <div className="tabletext">
                     <h2>Total</h2>
-                    <h2>₱ 0.00</h2>
+                    <h2>₱ {totals} </h2>
                 </div>
 
 
@@ -59,9 +93,10 @@ function Dashboard() {
                         <button onClick={handleDiscard} style={{background:'#923333'}}><box-icon type='solid' name='trash' size='md' color='lightblue' animation='tada-hover'></box-icon>Discard</button>
                         </li>
                         <li>
-                        <button onClick={handlePayment} style={{background:'#8AAF5A'}}><box-icon name='money' size='md' color="green" animation='tada-hover'></box-icon>Payment</button>
+                        <button onClick={handleModalOpen} style={{background:'#8AAF5A'}}><box-icon name='money' size='md' color="green" animation='tada-hover'></box-icon>Payment</button>
                         </li>                        
                     </ul>
+
 
                 </div>
 
@@ -69,9 +104,50 @@ function Dashboard() {
 
             </div>
 
-            <SearchBar />
+            <Products details={ProductData} />
 
-                   
+            <Modal className='modall' isOpen={modal}  onRequestClose={handleModalClose}>
+                    
+                <div className='cash'>
+                    <h3>Cash</h3>
+                    <input type="number" inputMode='numeric' placeholder='Enter amount...' onChange={(e) => {
+                        dispatch(setCustomerCash(e.target.value));
+                    }} />
+                </div>
+                
+
+                <div className='totalcash'>
+                    <h3>Total</h3>
+                    <p>₱ {totals}.00</p>
+                </div>
+
+
+                <div className='hrr'>
+                    <hr />
+                </div>
+
+                <div className='change'>
+                    <h3>Change</h3>
+         
+                    <p>₱{change}</p>
+                </div>
+
+                <div className='confirm'>
+                    <button onClick={() => {
+
+                        if (cash >= totals) {
+                            dispatch(setTotalSales(totals));
+                        }
+
+                        dispatch(resetValues());
+                        setModal(false);
+                    }}>Confirm</button>
+                </div>
+
+
+            </Modal>
+
+
         </div>
     );
 }
