@@ -7,60 +7,63 @@ import SearchBar from '../Searchbar';
 import products from '../../Data/data.js';
 
 function Products(props) {
+  const dispatch = useDispatch();
+  const payment = useSelector((state) => state.product.payment);
 
-    const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
-    const payment = useSelector((state) => state.product.payment);
+  const filteredProducts = products.filter(
+    (product) =>
+      (!selectedCategory || product.category === selectedCategory) && // filter by category
+      (searchTerm === '' || product.name.toLowerCase().includes(searchTerm.toLowerCase())) // filter by search term
+  );
 
-    const [selectedCategory, setSelectedCategory] = useState(null);
-    const filteredProducts = products.filter(
-        (product) =>
-        !selectedCategory || product.category === selectedCategory // filter based on selected category
-    );
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category === 'Categories' ? null : category);
-      };
-    return (
-        <div className='container1'>
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category === 'All Categories' ? null : category);
+  };
 
-            <div className='searchbar1'>
-                <SearchBar onCategoryChange={handleCategoryChange}  />
-            </div>
+  const handleSearchChange = (term) => {
+    setSearchTerm(term);
+  };
 
-            <div className='row'>
+  return (
+    <div className="container1">
+      <div className="searchbar1">
+        <SearchBar onCategoryChange={handleCategoryChange} onSearchChange={handleSearchChange} />
+      </div>
 
-                {filteredProducts.map((product) =>(
+      <div className="row">
+        {filteredProducts.map((product) => (
+          <div className="column" key={product.id}>
+            <div className="card">
+              <img src={product.img} style={{ width: 100, height: 163 }} className="productimage" />
 
-                <div className='column' >
-                    <div className='card'>
-                    
-                        <img src={product.img} style={{width: 100, height: 163}}  className="productimage" />            
+              <div className="containercard">
+                <h4>{product.name}</h4>
+                <p>₱{product.price}.00</p>
 
-                        <div className='containercard'>
-                            <h4>{product.name}</h4>
-                            <p> ₱{product.price}.00</p>
+                <button
+                  className="minus"
+                  onClick={() => {
+                    dispatch(decrement(product));
+                  }}
+                >
+                  -
+                </button>
 
-                            <button className='minus' onClick={() => {
-                                
-                                dispatch(decrement(product))
+                                <button className='plus' onClick={() => {
 
-                            }}>-</button>
-                            <button className='plus' onClick={() => {
-
-                                dispatch(increment(product));
+                                    dispatch(increment(product));
 
 
-                            }}>+</button>
+                                }}>+</button>
+                            </div>
+                            
                         </div>
-                        
                     </div>
-                </div>
-     
-                    ))}
-
+                 ))}
             </div>
-
-
         </div>
     )
 }

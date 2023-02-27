@@ -1,7 +1,7 @@
 import logo from '../images/empi.png'
 import soap from '../images/soap.png'
 import canton from '../images/canton.jpeg'
-
+import luckymebeef from '../images/lmbeef.jpeg'
 
 const ProductData = [
     {
@@ -26,6 +26,14 @@ const ProductData = [
         qty: 1,
         price: 12,
         img: canton,
+        category: 'Noodles'
+    },
+    {
+        code: 'tanduay1',
+        name: 'Lucky Me Beef',
+        qty: 1,
+        price: 9,
+        img: luckymebeef,
         category: 'Noodles'
     },
 
