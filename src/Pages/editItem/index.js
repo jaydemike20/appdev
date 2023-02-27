@@ -5,7 +5,7 @@ function EditItem() {
     return(
         <div>
             <Navbar />
-            <div>Edit Item Ni - new branch editItem</div>        
+            <div>Edit Item Ni</div>        
         </div>
     );
 }
