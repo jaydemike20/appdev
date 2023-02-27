@@ -5,6 +5,7 @@ import ProductData from '../../Data/data';
 import './index.css';
 import Modal from 'react-modal';
 import warningicon from "../../Component/icon/warning-icon.png"
+import products from '../../Data/data.js'
 
 function DeleteItem() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -13,6 +14,25 @@ function DeleteItem() {
         setModalIsOpen(true);
         setProductName(name);
     };
+
+
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredProducts = products.filter(
+        (product) =>
+        (!selectedCategory || product.category === selectedCategory) && // filter by category
+        (searchTerm === '' || product.name.toLowerCase().includes(searchTerm.toLowerCase())) // filter by search term
+    );
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category === 'All Categories' ? null : category);
+    };
+
+    const handleSearchChange = (term) => {
+        setSearchTerm(term);
+    };
+
     
     return(
         <div>
@@ -20,13 +40,13 @@ function DeleteItem() {
             
             <div className = "centered">
                 <div className = "searchbarr">
-                    <SearchBar/>
+                    <SearchBar onCategoryChange={handleCategoryChange} onSearchChange={handleSearchChange}/>
                 </div>
             </div>
             <div className = "centeredd">
                 <div className = "productss">
                     <div className='roww'>
-                    {ProductData.map((value, index) => (
+                    {filteredProducts.map((value, index) => (
                         
                             <div className='columnn' key={index}>
                                 
