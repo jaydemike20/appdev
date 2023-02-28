@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.searchbarr {
+    position: absolute;
+    top: 2vh;
+    left: -20%;
+    transform: translateX(-50%); 
+}
+.centered {
+    position: relative; 
+}
+.productss {
+    position: absolute;
+    top: 12vh;
+    left: 50vw;
+    transform: translateX(-50%); 
+    width: 100vw;
+    height: 80vh;
+    padding: 0px 20px;
+    overflow-y: scroll;
+
+}
+.centeredd {
+    position: relative; 
+}
+.columnn {
+    float: left;
+    width: 15%;
+    margin: 10px 15px;
+}
+
+.roww {
+    margin: 0px -5px;
+}
+
+.roww:after {
+    content: "";
+    display: table;
+    clear: both;
+
+    
+}
+
+.cardd {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "cardd" effect */
+    padding-top: 10px;
+    text-align: center;
+    background-color: white;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* Responsive columnns - one columnn layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .columnn {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+.cardd:hover {
+    box-shadow: 10px 8px 16px 0 #C1B438;
+  }
+  
+.containercardd {
+    padding-top: 10px;
+    
+}
+
+.containercardd p {
+    font-size: 16px;
+    background-color: #3FAEB5;
+    padding: 5px 0px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.containercardd button {
+    font-size: 24px;
+    width: 100%;
+    padding: 10px ;
+    border: 0;
+    cursor: pointer;
+    color: white;
+}
+.edit {
+    background-color: #C1B438;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
+}
+.edit:hover {
+    background-color: #C1B438;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+.cancel {
+    background-color: #C13838;
+    color: white;
+    font-size: 24px;
+    width: 10vw;
+    padding: 10px ;
+    border: 0;
+    cursor: pointer;
+    margin-right: 10%;
+}
+.yes {
+    background-color: #338526;
+    color: white;
+    font-size: 24px;
+    width: 10vw;
+    padding: 10px ;
+    border: 0;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: rgba(255, 0, 0, 0.993);
+}
+
+.yes:hover {
+    background-color: rgb(0, 128, 0);
+}
+.warning {
+    width: 5vw;
+    height: 10vh;
+}
+
+
