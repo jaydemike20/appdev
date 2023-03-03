@@ -13,39 +13,43 @@
 .centered {
     position: relative; 
 }
-.productss {
+.productsss {
+    transform: translateX(0%);
+    top: 10vh;
+    
     position: absolute;
-    top: 12vh;
-    left: 50vw;
-    transform: translateX(-50%); 
-    width: 100vw;
+    width: 60vw;
     height: 80vh;
+
     padding: 0px 20px;
+
+
     overflow-y: scroll;
 
 }
-.centeredd {
-    position: relative; 
-}
-.columnn {
+
+.columnnn {
+    
     float: left;
-    width: 15%;
-    margin: 10px 15px;
+    width: 25%;
+    padding: 0 10px;
+    margin: 20px 0px;
+    
+  
 }
 
-.roww {
+.rowww {
     margin: 0px -5px;
 }
 
-.roww:after {
+.rowww:after {
     content: "";
-    display: table;
+    display:table;
     clear: both;
-
     
 }
 
-.cardd {
+.carddd {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "cardd" effect */
     padding-top: 10px;
     text-align: center;
@@ -56,23 +60,23 @@
 
 /* Responsive columnns - one columnn layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
-    .columnn {
+    .columnnn {
       width: 100%;
       display: block;
       margin-bottom: 20px;
     }
   }
 
-.cardd:hover {
+.carddd:hover {
     box-shadow: 10px 8px 16px 0 #C1B438;
   }
   
-.containercardd {
+.containercarddd {
     padding-top: 10px;
     
 }
 
-.containercardd p {
+.containercarddd p {
     font-size: 16px;
     background-color: #3FAEB5;
     padding: 5px 0px;
@@ -80,7 +84,7 @@
     letter-spacing: 2px;
 }
 
-.containercardd button {
+.containercarddd button {
     font-size: 24px;
     width: 100%;
     padding: 10px ;
@@ -95,7 +99,7 @@
     
 }
 .edit:hover {
-    background-color: #C1B438;
+    background-color: #f8df00;
 }
 .buttons{
     display: flex;
@@ -132,6 +136,109 @@
 .warning {
     width: 5vw;
     height: 10vh;
+}
+.edititem{
+    
+    top: 15vh;
+    left: 65vw;
+    position: absolute;
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+.editname{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+.namee{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.195em;
+    text-align: left;
+    height: 5vh;
+    padding: 10px;
+    margin-right: 20px;
+}
+.nameevalue{
+    background: #766161;
+    border-radius: 25px;
+    width: 20vw;
+    height: 5vh;
+    padding: 10px;
+    color: aliceblue;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.editprice{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.pricee{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.195em;
+    text-align: left;
+    height: 5vh;
+    padding: 10px;
+    margin-right: 20px;
+}
+.priceevalue{
+    background: #766161;
+    border-radius: 25px;
+    width: 20vw;
+    height: 5vh;
+    padding: 10px;
+    color: aliceblue;
+    text-align: center;
+    margin-right: 20px;
+}
+.editbutton{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.confirmm{
+    border-radius: 15px;
+    width: 20vw;
+    height: 5vh;
+    background-color: #338526;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.195em;
+    text-align: center;
+    color: white;
+    border-color: white;
+}
+.confirmm:hover{
+    background-color: #104d06;
+}
+.cancell{
+    border-radius: 15px;
+    width: 20vw;
+    height: 5vh;
+    background-color: #852626;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.195em;
+    text-align: center;
+    color: white;
+    border-color: white;
+
+}
+.cancell:hover{
+    background-color: #4d0707;
 }
 
 
