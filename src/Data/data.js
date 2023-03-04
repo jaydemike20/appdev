@@ -36,6 +36,19 @@ const ProductData = [
         img: luckymebeef,
         category: 'Noodles'
     },
+    
+    {
+        code: 'tanduay1',
+        name: 'Lucky Me Beef',
+        qty: 1,
+        price: 9,
+        img: luckymebeef,
+        category: 'Noodles'
+    },
+    
+    
+    
+    
 
 ]
 
