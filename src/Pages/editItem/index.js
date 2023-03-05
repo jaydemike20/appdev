@@ -48,7 +48,7 @@ function EditItem() {
                     <SearchBar onCategoryChange={handleCategoryChange} onSearchChange={handleSearchChange}/>
                 </div>
             </div>
-            <div style={{ transform: `translateX(${isCentered ? '20%' : '0'})`}}>
+            <div style={{ transform: `translateX(${isCentered ? '20%' : '0'})`, transition: 'transform 0.5s ease-in-out'}}>
                 <div className = "productsss">
                     <div className='rowww'>
                     {filteredProducts.map((value, index) => (
