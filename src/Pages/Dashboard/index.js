@@ -48,7 +48,7 @@ function Dashboard() {
 
                 <h2>Total Sales</h2>
 
-                <h3>₱ {totalSale}.00</h3>
+                <h3>₱ {totalSale.toFixed(2)}</h3>
 
             </div>
 
@@ -83,17 +83,36 @@ function Dashboard() {
 
                 <div className="tabletext">
                     <h2>Total</h2>
-                    <h2>₱ {totals} </h2>
+                    <h2>₱ {totals.toFixed(2)} </h2>
                 </div>
 
 
                 <div className="tablebuttons">
                     <ul>
                         <li>
-                        <button onClick={handleDiscard} style={{background:'#923333'}}><box-icon type='solid' name='trash' size='md' color='lightblue' animation='tada-hover'></box-icon>Discard</button>
+
+                        <button 
+                        onClick={handleDiscard} 
+                        style={{background:'#923333'}}
+                        ><box-icon 
+                        type='solid' 
+                        name='trash' 
+                        size='md' 
+                        color='lightblue' 
+                        animation='tada-hover'
+                        ></box-icon>Discard</button>
                         </li>
                         <li>
-                        <button onClick={handleModalOpen} style={{background:'#8AAF5A'}}><box-icon name='money' size='md' color="green" animation='tada-hover'></box-icon>Payment</button>
+
+                        <button 
+                        onClick={handleModalOpen} 
+                        style={{background:'#8AAF5A'}}
+                        ><box-icon 
+                        name='money' 
+                        size='md' 
+                        color="green" 
+                        animation='tada-hover'
+                        ></box-icon>Payment</button>
                         </li>                        
                     </ul>
 
