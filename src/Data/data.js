@@ -31,8 +31,8 @@ function editProduct(code, newprice, newname) {
     const productIndex = ProductData.findIndex((product) => product.code === code);
 
     if (productIndex !== -1) {
-        ProductData[productIndex].price = newprice;
-        ProductData[productIndex].name = newname;
+        ProductData[productIndex].price = newprice || ProductData[productIndex].price;
+        ProductData[productIndex].name = newname || ProductData[productIndex].name;
         saveProductData();
         window.location.reload();
     }
@@ -40,9 +40,16 @@ function editProduct(code, newprice, newname) {
 
 }
 
-
+function deleteProduct(code) {
+    const productIndex = ProductData.findIndex((product) => product.code === code);
+    if (productIndex !== -1) {
+        ProductData.splice(productIndex, 1);
+        saveProductData();
+        window.location.reload();
+    }
+}
 
 
 
 export default ProductData;
-export { addProduct, saveProductData, editProduct};
+export { addProduct, saveProductData, editProduct, deleteProduct };

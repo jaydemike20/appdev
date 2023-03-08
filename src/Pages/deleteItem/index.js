@@ -6,13 +6,16 @@ import './index.css';
 import Modal from 'react-modal';
 import warningicon from "../../Component/icon/warning-icon.png"
 import products from '../../Data/data.js'
+import {  deleteProduct } from '../../Data/data';
 
 function DeleteItem() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [productName, setProductName] = useState('');    
-    const handleDelete = (name) => {
+    const [productName, setProductName] = useState('');
+    const [productCode, setProductCode] = useState('');    
+    const handleDelete = (name, code) => {
         setModalIsOpen(true);
         setProductName(name);
+        setProductCode(code);
     };
 
 
@@ -33,6 +36,10 @@ function DeleteItem() {
         setSearchTerm(term);
     };
 
+    const handleDeleteConfirmed = () => {
+        deleteProduct(productCode);
+        setModalIsOpen(false);
+      };
     
     return(
         <div>
@@ -57,13 +64,13 @@ function DeleteItem() {
                                     <div className='containercardd'>
                                         <h4>{value.name}</h4>
                                         <p> ₱{value.price}</p>
-                                        <button className='delete' onClick={() => handleDelete(value.name)}>Delete</button>
+                                        <button className='delete' onClick={() => handleDelete(value.name, value.code)}>Delete</button>
                                         <Modal className = 'modal' isOpen={modalIsOpen} overlayClassName="modal-overlay">
                                             <img src={warningicon} className="warning"/>  
                                             <h2>Are you sure to delete<br></br> {productName}? </h2>
                                             <div className = 'buttons'>
                                                 <button className = 'cancel' onClick={() => setModalIsOpen(false)}>CANCEL</button>
-                                                <button className = 'yes' onClick={() => setModalIsOpen(false)}>YES</button>
+                                                <button className = 'yes' onClick={handleDeleteConfirmed}>YES</button>
                                             </div>
                                             
                                         </Modal>

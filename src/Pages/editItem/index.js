@@ -68,7 +68,9 @@ function EditItem() {
 
     const handleEditItem = () => {
 
-        editProduct(code, data.price, data.name, data.imgUrl);
+        editProduct(code, data.price, data.name);
+    
+   
 
 
     }
@@ -119,6 +121,7 @@ function EditItem() {
                         value={data.name}
                         onChange={(event) => {
                             let d = data;
+
                             setData({...d, name: event.target.value})
                         }} 
                         />
