@@ -66,8 +66,6 @@ export default function Navbar() {
                             Delete Item
                         </Link>
                     </li>
-
-
                 </ul>
 
             </nav>

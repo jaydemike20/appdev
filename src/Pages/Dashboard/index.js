@@ -45,9 +45,7 @@ function Dashboard() {
             <Navbar />
 
             <div className="totalsales">
-
                 <h2>Total Sales</h2>
-
                 <h3>₱ {totalSale.toFixed(2)}</h3>
 
             </div>

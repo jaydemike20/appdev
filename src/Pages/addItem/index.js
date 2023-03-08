@@ -34,16 +34,6 @@ function AddItem() {
 
             <div className = 'box'>
                 <img src={data.imgURL} width='250px' />
-                {/* <div>
-                {selectedFile && (
-                <img
-                src={URL.createObjectURL(selectedFile)}
-                alt="Uploaded file preview"
-                className="uploaded-file-preview"
-                draggable="false"
-                />
-            )}
-                </div> */}
 
                 <div className= 'productname'>
                     <p>Name</p>
@@ -85,7 +75,9 @@ function AddItem() {
                     value={data.category}
                     onChange={(event) => {
                         let d = data;
-                        setData({...d, category: event.target.value})
+
+
+                        setData({...d, category: (event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1))})
                     }} />
                 </div>
 
@@ -99,21 +91,6 @@ function AddItem() {
                         setData({...d, imgURL: event.target.value})
                     }} />
                 </div>        
-                {/* <div class="file-upload">
-                    <p>Upload</p>
-                    
-                    <label>
-                         
-                        <div><img src={uploadicon} alt="My Image" />
-                        <span>{selectedFile ? selectedFile.name : 'Select a file'}</span></div>
-                        <input type="file" onChange={handleFileInputChange} accept="image/*"/>
-                        
-                    </label>
-                </div> */}
-
-                {/* try imageURL */}
-
-
 
                 <div className= 'additem'>
                     <button onClick={handleAddItem}>
