@@ -129,15 +129,19 @@ function Dashboard() {
                     
                 <div className='cash'>
                     <h3>Cash</h3>
-                    <input type="number" inputMode='numeric' placeholder='Enter amount...' onChange={(e) => {
-                        dispatch(setCustomerCash(e.target.value));
-                    }} />
+                    <div className='divinput'>
+                        <input type="number" inputMode='numeric' placeholder='Enter amount...' onChange={(e) => {
+                            dispatch(setCustomerCash(e.target.value));
+                        }} />
+                    </div>
                 </div>
                 
 
                 <div className='totalcash'>
                     <h3>Total</h3>
-                    <p>₱ {totals}.00</p>
+                    <div className='divtotalcash'>
+                        <p>₱ {totals.toFixed(2)}</p>
+                    </div>
                 </div>
 
 
@@ -147,8 +151,11 @@ function Dashboard() {
 
                 <div className='change'>
                     <h3>Change</h3>
-         
-                    <p>₱{change}</p>
+                    
+                    <div className='divchange'>
+                        <p>₱ {change.toFixed(2)}</p>
+                    </div>
+
                 </div>
 
                 <div className='confirm'>
