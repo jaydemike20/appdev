@@ -2,55 +2,28 @@ import logo from '../images/empi.png'
 import soap from '../images/soap.png'
 import canton from '../images/canton.jpeg'
 import luckymebeef from '../images/lmbeef.jpeg'
+import { useDispatch } from 'react-redux'
 
-const ProductData = [
-    {
-        code: 'empi1',
-        name: 'Emperador Light',
-        qty: 1,
-        price: 150,
-        img: logo,
-        category: 'Liquor'
-    },
-    {
-        code: 'soap1',
-        name: 'Safeguard White',
-        qty: 1,
-        price: 54,
-        img: soap,
-        category: 'Body Soap'
-    },
-    {
-        code: 'empi3',
-        name: 'Pancit Canton Spicy',
-        qty: 1,
-        price: 12,
-        img: canton,
-        category: 'Noodles'
-    },
-    {
-        code: 'tanduay1',
-        name: 'Lucky Me Beef',
-        qty: 1,
-        price: 9,
-        img: luckymebeef,
-        category: 'Noodles'
-    },
-    
-    {
-        code: 'tanduay1',
-        name: 'Lucky Me Beef',
-        qty: 1,
-        price: 9,
-        img: luckymebeef,
-        category: 'Noodles'
-    },
-    
-    
-    
-    
+
+const storedProductData = localStorage.getItem('productData');
+
+const ProductData = storedProductData ? JSON.parse(storedProductData) : [
 
 ]
 
 
+function saveProductData() {
+    localStorage.setItem('productData', JSON.stringify(ProductData));
+}
+
+// function for adding a new product
+
+function addProduct(code, name, qty, price, img, category) {
+    const newProduct = {code, name, qty, price, img, category};
+    ProductData.push(newProduct);
+    saveProductData();
+    window.location.reload();
+}
+
 export default ProductData;
+export { addProduct, saveProductData };

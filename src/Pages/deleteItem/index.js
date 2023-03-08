@@ -56,7 +56,7 @@ function DeleteItem() {
                     
                                     <div className='containercardd'>
                                         <h4>{value.name}</h4>
-                                        <p> ₱{value.price}.00</p>
+                                        <p> ₱{value.price}</p>
                                         <button className='delete' onClick={() => handleDelete(value.name)}>Delete</button>
                                         <Modal className = 'modal' isOpen={modalIsOpen} overlayClassName="modal-overlay">
                                             <img src={warningicon} className="warning"/>  

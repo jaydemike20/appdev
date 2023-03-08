@@ -41,7 +41,7 @@ function Products(props) {
 
               <div className="containercard">
                 <h4>{product.name}</h4>
-                <p>₱{product.price.toFixed(2)}</p>
+                <p>₱{product.price}</p>
 
                 <button
                   className="minus"

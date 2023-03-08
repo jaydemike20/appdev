@@ -61,7 +61,7 @@ function EditItem() {
                     
                                     <div className='containercarddd'>
                                         <h4>{value.name}</h4>
-                                        <p> ₱{value.price}.00</p>
+                                        <p> ₱{value.price}</p>
                                         <button onClick={() => displayEdit(value.img, value.name, value.price)} className='edit'>Edit</button>
                                         
                                     </div>
