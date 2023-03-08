@@ -24,7 +24,7 @@ function AddItem() {
 
     const handleAddItem = () => {
         addProduct(data.code, data.name, data.qty, data.price, data.imgURL, data.category);
-        saveProductData();
+        
     }
     
     return(

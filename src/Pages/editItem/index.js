@@ -2,8 +2,10 @@ import Navbar from "../../Component/Navbar/index";
 import React, {useState} from 'react'
 import SearchBar from "../../Component/Searchbar";
 import './index.css';
-import ProductData from '../../Data/data';
+import ProductData, { editProduct } from '../../Data/data';
 import products from '../../Data/data.js'
+import { saveProductData } from "../../Data/data";
+
 function EditItem() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +15,17 @@ function EditItem() {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [content, setContent] = useState('');
+    const [code, setCode] = useState('');
+
+    const [data, setData] = useState({
+        name: '',
+        price: '',
+        imgUrl: ''
+    })
+
+
+    // searchbar and category function
+
     const filteredProducts = products.filter(
         (product) =>
         (!selectedCategory || product.category === selectedCategory) && // filter by category
@@ -26,12 +39,21 @@ function EditItem() {
     const handleSearchChange = (term) => {
         setSearchTerm(term);
     };
-    const displayEdit = (img, name, price) =>{
+
+
+
+
+
+
+
+    const displayEdit = (img, name, price, code) =>{
         setShowDiv(true);
         setIsCentered(false);
         setImage(img);
         setName(name);
         setPrice(price);
+        setCode(code);
+
     }
     const hideEdit = () =>{
         setShowDiv(false);
@@ -39,7 +61,18 @@ function EditItem() {
     }
     function handleInput(event) {
         setContent(event.target.textContent);
-      }
+    }
+
+
+
+
+    const handleEditItem = () => {
+
+        editProduct(code, data.price, data.name, data.imgUrl);
+
+
+    }
+
     return(
         <div>
             <Navbar />
@@ -62,7 +95,7 @@ function EditItem() {
                                     <div className='containercarddd'>
                                         <h4>{value.name}</h4>
                                         <p> ₱{value.price}</p>
-                                        <button onClick={() => displayEdit(value.img, value.name, value.price)} className='edit'>Edit</button>
+                                        <button onClick={() => displayEdit(value.img, value.name, value.price, value.code)} className='edit'>Edit</button>
                                         
                                     </div>
                                 </div>
@@ -79,19 +112,52 @@ function EditItem() {
                             
                     <img src={image} style={{width: 150, height: 200}} />
                     <div className="editname">
-                        <p className="namee">Name</p>
-                        <p className= "nameevalue"contentEditable={true} onInput={handleInput}>
+
+                        <label>Name</label>
+                        <input
+                        placeholder={name}
+                        value={data.name}
+                        onChange={(event) => {
+                            let d = data;
+                            setData({...d, name: event.target.value})
+                        }} 
+                        />
+
+                        {/* <p className="namee">Name</p>
+                        <p className= "nameevalue"contentEditable={true} onInput={handleInput} value={name}>
                             {name}
-                            </p>
+                            </p> */}
                     </div>
+
                     <div className="editprice">
-                        <p className="pricee">Price</p>
-                        <p className= "priceevalue" contentEditable={true} onInput={handleInput}>
-                        ₱{price}.00
-                            </p>     
+
+
+                        <label>Price</label>
+
+                        <input
+                        type="number"
+                        placeholder={price}
+                        value={data.price}
+                        onChange={(event) => {
+                            let d = data;
+                            setData({...d, price: event.target.value})
+                        }} 
+                        />
+
+
+
+                        {/* <p className="pricee">Price</p>
+                        <p className="priceevalue" contentEditable={true} onInput={handleInput} onChange={(event) => {
+                            setPrice(event.target.value)
+                        }}>
+                            ₱{price}
+                        </p> */}
+   
                     </div>    
+
+
                     <div className="editbutton">
-                        <button className="confirmm">Confirm</button>
+                        <button className="confirmm" onClick={handleEditItem}>Confirm</button>
                         <button onClick={() => hideEdit()} className="cancell">Cancel</button>
                     </div> 
                         

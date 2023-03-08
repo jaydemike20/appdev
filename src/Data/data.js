@@ -11,7 +11,7 @@ const ProductData = storedProductData ? JSON.parse(storedProductData) : [
 
 ]
 
-
+// save product
 function saveProductData() {
     localStorage.setItem('productData', JSON.stringify(ProductData));
 }
@@ -25,5 +25,24 @@ function addProduct(code, name, qty, price, img, category) {
     window.location.reload();
 }
 
+
+function editProduct(code, newprice, newname) {
+
+    const productIndex = ProductData.findIndex((product) => product.code === code);
+
+    if (productIndex !== -1) {
+        ProductData[productIndex].price = newprice;
+        ProductData[productIndex].name = newname;
+        saveProductData();
+        window.location.reload();
+    }
+
+
+}
+
+
+
+
+
 export default ProductData;
-export { addProduct, saveProductData };
+export { addProduct, saveProductData, editProduct};
