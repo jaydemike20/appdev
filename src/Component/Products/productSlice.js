@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const totalSalesFromStorage = localStorage.getItem("totalSales");
+
 
 const productSlice = createSlice({
     name: "product",
     initialState: {
         customerCash: 0,
         customerChange: 0,
-        totalsales: 0,
+        totalsales:  totalSalesFromStorage ? parseInt(totalSalesFromStorage) : 0,
         total: 0,
         quantity: 0,
         payment: [],
@@ -75,14 +77,23 @@ const productSlice = createSlice({
         },
         setTotalSales: (state, action) => {
             state.totalsales += action.payload
-        }
+        },
 
+        // sales history
+        // addSaleToHistory: (state, action) => {
+        //     const sale = {
+        //       amount: action.payload,
+        //       timestamp: new Date().toISOString()
+        //     };
+        //     state.salesHistory.push(sale);
+        //   },
 
     },
 });
 
 
 export const { increment, decrement, resetValues, setCustomerCash, setTotalSales} = productSlice.actions;
+
 
 export default productSlice.reducer;
 
