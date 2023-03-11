@@ -1,14 +1,13 @@
 import Navbar from '../../Component/Navbar/index'
 import '../Dashboard/dashboard.css';
 import 'boxicons';
-
+import SearchBar from '../../Component/Searchbar';
 import Products from '../../Component/Products/products';
 import ProductData from '../../Data/data';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetValues, setCustomerCash, setTotalSales } from '../../Component/Products/productSlice';
-import { useEffect, useState } from 'react';
+import { resetValues, setCustomerCash, setCustomerChange, setTotalSales } from '../../Component/Products/productSlice';
+import { useState } from 'react';
 import Modal from 'react-modal';
-
 
 function Dashboard() {
 
@@ -21,13 +20,10 @@ function Dashboard() {
 
     const payment = useSelector((state) => state.product.payment);
     const totals = useSelector((state) => state.product.total);
+    const totalSale = useSelector((state) => state.product.totalsales);
     const change = useSelector((state) => state.product.customerChange);
     const cash = useSelector((state) => state.product.customerCash);
-    const totalSales = useSelector((state) => state.product.totalsales);
 
-    useEffect(() => {
-      localStorage.setItem("totalSales", totalSales);
-    }, [totalSales]);
 
 
     // modal for payment
@@ -42,17 +38,6 @@ function Dashboard() {
         dispatch(resetValues());
     }
 
-    // modal for saleshistory
-    const [salesmodal, setSalesModal] = useState(false);
-
-    const handleSalesModalOpen = () => {
-        setSalesModal(true);
-    }
-
-    const handleSalesModalClose = () => {
-        setSalesModal(false);
-    }
-
 
 
     return(
@@ -60,6 +45,7 @@ function Dashboard() {
             <Navbar />
 
             <div className="totalsales">
+<<<<<<< HEAD
 
                 <div className='saleshistory'>
                     <h2>Total Sales</h2>
@@ -105,6 +91,10 @@ function Dashboard() {
 
 
                 </Modal> */}
+=======
+                <h2>Total Sales</h2>
+                <h3>₱ {totalSale.toFixed(2)}</h3>
+>>>>>>> parent of 177badb (Added function for Total Sales stored in localstorage)
 
             </div>
 
@@ -149,11 +139,11 @@ function Dashboard() {
 
                         <button 
                         onClick={handleDiscard} 
-                        style={{background:'#923333', borderRadius: '20px'}}
+                        style={{background:'#923333'}}
                         ><box-icon 
                         type='solid' 
                         name='trash' 
-                        size='sm' 
+                        size='md' 
                         color='lightblue' 
                         animation='tada-hover'
                         ></box-icon>Discard</button>
@@ -162,10 +152,10 @@ function Dashboard() {
 
                         <button 
                         onClick={handleModalOpen} 
-                        style={{background:'#8AAF5A', borderRadius: '20px'}}
+                        style={{background:'#8AAF5A'}}
                         ><box-icon 
                         name='money' 
-                        size='sm' 
+                        size='md' 
                         color="green" 
                         animation='tada-hover'
                         ></box-icon>Payment</button>

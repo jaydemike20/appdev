@@ -1,3 +1,9 @@
+import logo from '../images/empi.png'
+import soap from '../images/soap.png'
+import canton from '../images/canton.jpeg'
+import luckymebeef from '../images/lmbeef.jpeg'
+import { useDispatch } from 'react-redux'
+
 
 const storedProductData = localStorage.getItem('productData');
 

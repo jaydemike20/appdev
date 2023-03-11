@@ -4,52 +4,37 @@
     box-sizing: border-box;
 }
 
-
 .totalsales {
-    position: absolute;
-    width: 30vw;
-    height: 8vh;
-    top: 8.5vh;
-    left: 8.7vw;
+    width: 40vw;
+    height: 10vh;
+    position: fixed;
 
-    background-color: #ffff;
-
-    display: flex;
-}
-
-.saleshistory {
-    width: 15vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-.saleshistory h2 {    
+
+.totalsales h2 {
+    font-size: 30px;
+    margin-left: 130px;
     text-transform: uppercase;
-
-}
-
-.saleshistory button {
-    border: 0px;
-    margin-bottom: 25px;
-    background-color: white;
-    cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .totalsales h3 {
-    width: 15vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #779D27;
-    border-radius: 50px;
+    color: #FFFFFF;
     font-size: 25px;
+
+    padding: 10px 50px;
+    margin-left: 30px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+
+    background-color: #52B050;
 }
-
-
-
 
 .table {
     position: fixed;
@@ -406,6 +391,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .confirm button:hover {
     background-color: #2980b9;
+<<<<<<< HEAD
 }
 
 
@@ -442,3 +428,6 @@ input[type=number]::-webkit-inner-spin-button {
 .salesmodal h3 {
     text-align: right;
 } */
+=======
+}
+>>>>>>> parent of 177badb (Added function for Total Sales stored in localstorage)
