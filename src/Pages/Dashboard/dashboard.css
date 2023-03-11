@@ -396,7 +396,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 /* to be continued soon */
-/* .salesmodal{
+.salesmodal{
     color: black;
     background-color: white;
     border: 2px solid black;
@@ -427,7 +427,4 @@ input[type=number]::-webkit-inner-spin-button {
 
 .salesmodal h3 {
     text-align: right;
-} */
-=======
 }
->>>>>>> parent of 177badb (Added function for Total Sales stored in localstorage)

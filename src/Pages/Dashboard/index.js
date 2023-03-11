@@ -45,51 +45,8 @@ function Dashboard() {
             <Navbar />
 
             <div className="totalsales">
-
-                <div className='saleshistory'>
-                    <h2>Total Sales</h2>
-                    <button title="History" onClick={handleSalesModalOpen}><box-icon name='history' size="sm" color='red' animation='tada'></box-icon></button>
-                    
-                </div>
-
-                <h3>₱ {totalSales.toFixed(2)}</h3>
-
-
-                {/* to be continued soon */}
-                <Modal className='salesmodal' isOpen={salesmodal} onRequestClose={handleSalesModalClose}>
-
-                    <h1>History</h1>
-
-                    <div>
-                        <p>March 9, 2023</p>
-
-                    </div>                    
-
-                    <div className='historytable'>
-                    <table>
-                        <tr>
-                            <th className="tablename">Name</th>
-                            <th className="tableqty">Qty</th>
-                            <th className="tableprice">Price</th>
-                        </tr>
-
-                        <tr>
-                            <td>tuyo</td>
-                            <td>1</td>
-                            <td>32.32</td>
-                        </tr>
-                    </table>
-                    </div>
-                    <hr />
-                    <div className="tabletext">
-                        <h2>Total</h2>
-                        <h2>₱ {totalSales.toFixed(2)} </h2>
-                    </div>
-
-
-
-
-                </Modal>
+                <h2>Total Sales</h2>
+                <h3>₱ {totalSale.toFixed(2)}</h3>
 
             </div>
 
