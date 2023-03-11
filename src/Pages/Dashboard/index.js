@@ -45,11 +45,10 @@ function Dashboard() {
             <Navbar />
 
             <div className="totalsales">
-<<<<<<< HEAD
 
                 <div className='saleshistory'>
                     <h2>Total Sales</h2>
-                    {/* <button title="History" onClick={handleSalesModalOpen}><box-icon name='history' size="sm" color='red' animation='tada'></box-icon></button> */}
+                    <button title="History" onClick={handleSalesModalOpen}><box-icon name='history' size="sm" color='red' animation='tada'></box-icon></button>
                     
                 </div>
 
@@ -57,7 +56,7 @@ function Dashboard() {
 
 
                 {/* to be continued soon */}
-                {/* <Modal className='salesmodal' isOpen={salesmodal} onRequestClose={handleSalesModalClose}>
+                <Modal className='salesmodal' isOpen={salesmodal} onRequestClose={handleSalesModalClose}>
 
                     <h1>History</h1>
 
@@ -90,11 +89,7 @@ function Dashboard() {
 
 
 
-                </Modal> */}
-=======
-                <h2>Total Sales</h2>
-                <h3>₱ {totalSale.toFixed(2)}</h3>
->>>>>>> parent of 177badb (Added function for Total Sales stored in localstorage)
+                </Modal>
 
             </div>
 
