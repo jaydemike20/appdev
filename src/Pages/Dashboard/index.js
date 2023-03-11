@@ -63,7 +63,7 @@ function Dashboard() {
 
                 <div className='saleshistory'>
                     <h2>Total Sales</h2>
-                    <button title="History" onClick={handleSalesModalOpen}><box-icon name='history' size="sm" color='red' animation='tada'></box-icon></button>
+                    {/* <button title="History" onClick={handleSalesModalOpen}><box-icon name='history' size="sm" color='red' animation='tada'></box-icon></button> */}
                     
                 </div>
 
@@ -71,7 +71,7 @@ function Dashboard() {
 
 
                 {/* to be continued soon */}
-                <Modal className='salesmodal' isOpen={salesmodal} onRequestClose={handleSalesModalClose}>
+                {/* <Modal className='salesmodal' isOpen={salesmodal} onRequestClose={handleSalesModalClose}>
 
                     <h1>History</h1>
 
@@ -104,7 +104,7 @@ function Dashboard() {
 
 
 
-                </Modal>
+                </Modal> */}
 
             </div>
 
