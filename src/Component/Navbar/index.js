@@ -1,6 +1,6 @@
 import 'boxicons';
 import './index.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, NavLink } from 'react-router-dom';
 
 export default function Navbar() {
 
@@ -20,7 +20,7 @@ export default function Navbar() {
             <nav className="navbar">
                 <ul>
                     <li>
-                        <Link to='/'>
+                        <Link to='/Dashboard'>
                             <box-icon  
                             type='solid' 
                             name='dashboard' 
@@ -44,7 +44,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to='/EditItem'>
+                        <NavLink to='/EditItem'>
                             <box-icon 
                             type='solid' 
                             name='edit' 
@@ -53,7 +53,7 @@ export default function Navbar() {
                             animation='burst-hover'
                             ></box-icon>
                             Edit Item
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
                         <Link to='/DeleteItem'>
