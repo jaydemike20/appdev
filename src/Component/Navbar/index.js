@@ -1,7 +1,6 @@
 import 'boxicons';
 import './index.css';
-import { Link, Navigate, NavLink } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 export default function Navbar() {
 
     return(
@@ -20,7 +19,7 @@ export default function Navbar() {
             <nav className="navbar">
                 <ul>
                     <li>
-                        <Link to='/Dashboard'>
+                        <NavLink to='/Dashboard'>
                             <box-icon  
                             type='solid' 
                             name='dashboard' 
@@ -29,10 +28,10 @@ export default function Navbar() {
                             animation='burst-hover'
                             ></box-icon>
                             Dashboard
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/AddItem'>
+                        <NavLink to='/AddItem'>
                             <box-icon 
                             name='cart-add' 
                             type='solid' 
@@ -41,7 +40,7 @@ export default function Navbar() {
                             animation='burst-hover' 
                             ></box-icon>
                             Add Item
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
                         <NavLink to='/EditItem'>
@@ -56,7 +55,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     <li>
-                        <Link to='/DeleteItem'>
+                        <NavLink to='/DeleteItem'>
                             <box-icon 
                             name='trash'
                             color='#F94A29' 
@@ -64,7 +63,7 @@ export default function Navbar() {
                             animation='burst-hover' 
                             ></box-icon>
                             Delete Item
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
 

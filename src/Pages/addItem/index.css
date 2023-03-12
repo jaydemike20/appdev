@@ -184,4 +184,8 @@
     font-weight: bold;
     padding-right: 25%;
 }
-  
+
+.image {
+    text-align: center;
+    padding: 10px 0px;
+}

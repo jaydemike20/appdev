@@ -115,8 +115,9 @@ function EditItem() {
                     <img src={image} style={{width: 150, height: 200}} />
                     <div className="editname">
 
-                        <label>Name</label>
+                        <label className="namee">Name</label>
                         <input
+                        className="nameinput"
                         placeholder={name}
                         value={data.name}
                         onChange={(event) => {
@@ -135,9 +136,10 @@ function EditItem() {
                     <div className="editprice">
 
 
-                        <label>Price</label>
+                        <label className="pricee">Price</label>
 
                         <input
+                        className="nameinput"
                         type="number"
                         placeholder={price}
                         value={data.price}

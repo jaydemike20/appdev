@@ -23,6 +23,11 @@ function AddItem() {
     };
 
     const handleAddItem = () => {
+        if (!data.code || !data.name || !data.price || !data.category || !data.imgURL) {
+            alert("Please fill in all details and select an image file.");
+            return;
+        }
+        
         addProduct(data.code, data.name, data.qty, data.price, data.imgURL, data.category);
         
     }
@@ -33,7 +38,12 @@ function AddItem() {
 
 
             <div className = 'box'>
-                <img src={data.imgURL} width='250px' />
+                
+                <div className='image'>
+                    <img src={data.imgURL}  width='100px' />
+                </div>
+
+      
 
                 <div className= 'productname'>
                     <p>Name</p>

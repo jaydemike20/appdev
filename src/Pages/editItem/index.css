@@ -241,4 +241,13 @@
     background-color: #4d0707;
 }
 
+.nameinput {
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    border: 0px;
+    background-color: #f1f1f1;
+}
+
 
